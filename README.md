@@ -32,7 +32,9 @@ Or install it yourself as:
 require 'power_snoop'
 ```
 
-### Get consumption for a WeMo Smart LED Bulb when it is turned off
+### Determine defined consumption for a WeMo Smart LED Bulb when it is turned off
+
+*This is from the manufacturer or one-time measured data. Not real-time.*
 
 ```ruby
 PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_off
@@ -42,7 +44,9 @@ PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_off
 #<Unitwise::Measurement value=0.5 unit=watt>
 ```
 
-### Get maximum consumption for the WeMo Smart LED Bulb
+### Determine defined maximum consumption for the WeMo Smart LED Bulb
+
+*This is from the manufacturer or one-time measured data. Not real-time.*
 
 ```ruby
 PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_max
@@ -52,7 +56,9 @@ PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_max
 #<Unitwise::Measurement value=10 unit=watt>
 ```
 
-### Get power for the WeMo Smart LED Bulb when at dim level 200 (78%)
+### Determine defined consumption of the WeMo Smart LED Bulb when at dim level 200 (78%)
+
+*This is from the manufacturer or one-time measured data. Not real-time.*
 
 ```ruby
 PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_at_dim(200)
@@ -67,7 +73,7 @@ PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_at_dim(200)
 ```ruby
 wemo = PowerSnoop::Network::Wemo.new
 link = wemo.scan_for_devices
-link
+link.scan_for_devices
 ```
 
 ```
