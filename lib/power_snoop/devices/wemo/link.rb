@@ -3,7 +3,8 @@ module PowerSnoop
     module Wemo
 
       class Link < PowerSnoop::Device
-        attr_accessor :firmware_version, :mac_address, :serial_number
+        attr_accessor :description, :firmware_version, :friendly_name, :mac_address, :model
+        attr_accessor :manufacturer, :serial_number, :state, :upc
 
         class << self
           def brand
@@ -36,9 +37,18 @@ module PowerSnoop
         end
 
         def initialize
+          @description      = nil
           @firmware_version = nil
-          @mac_address = nil
-          @serial_number = nil
+          @friendly_name    = nil
+          @mac_address      = nil
+          @manufacturer     = nil
+          @serial_number    = nil
+          @state            = nil
+          @upc              = nil
+        end
+
+        def to_s
+          "#{friendly_name} (MAC: #{mac_address}, Serial: #{serial_number})"
         end
       end
 

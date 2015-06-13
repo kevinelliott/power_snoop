@@ -9,7 +9,7 @@ module PowerSnoop
         @bind_port = options[:port] || 54321
         @multicast_host = '239.255.255.250'
         @multicast_port = 1900
-        @timeout = options[:timeout] || 5
+        @timeout = options[:timeout] || 3
 
         @upnp = PowerSnoop::Network::UPnP.new(host: bind_host, port: bind_port, multicast_host: multicast_host, multicast_port: multicast_port, timeout: timeout)
       end
@@ -25,7 +25,7 @@ module PowerSnoop
         links = []
         wemo_root_devices.each do |device|
           link = WemoLinkRootDevice.new(device)
-          puts "Found device WeMo Link at #{link.host}:#{link.port}"
+          puts "Found device '#{link.device[:friendly_name]}' at #{link.host}:#{link.port}"
           links << link
         end
         links.first
@@ -33,12 +33,14 @@ module PowerSnoop
 
       def scan_for_devices
         link = discover_wemo_link
-        link.retrieve_location
+        link.scan_for_devices
+        link.to_wemo_link
       end
     end
 
     class WemoLinkRootDevice
       attr_accessor :location, :usn, :server, :st
+      attr_accessor :device, :service_list
 
       def initialize(upnp_root_device)
         require 'uri'
@@ -46,6 +48,8 @@ module PowerSnoop
         @usn      = upnp_root_device.headers['USN']
         @server   = upnp_root_device.headers['SERVER']
         @st       = upnp_root_device.headers['ST']
+
+        get_location
       end
 
       def host
@@ -56,15 +60,35 @@ module PowerSnoop
         location.port
       end
 
-      def retrieve_location
+      def get_location
         require 'net/http'
         require 'nori'
         content = Net::HTTP.get(location)
-        Nori.new.parse(content)
+        result  = Nori.new(convert_tags_to: lambda { |tag| tag.snakecase.to_sym }).parse(content)[:root]
+
+        self.device = result[:device]
       end
 
       def scan_for_devices
 
+      end
+
+      def to_wemo_link
+        link = PowerSnoop::Devices::Wemo::Link.new
+        link.firmware_version = device[:firmware_version]
+        link.friendly_name    = device[:friendly_name]
+        link.mac_address      = device[:mac_address]
+        link.manufacturer     = device[:manufacturer]
+        link.model            = {
+          description: device[:model_description],
+          name: device[:model_name],
+          number: device[:model_number],
+          url: device[:model_url]
+        }
+        link.serial_number    = device[:serial_number]
+        link.state            = device[:binary_state]
+        link.upc              = device[:upc]
+        link
       end
     end
 
