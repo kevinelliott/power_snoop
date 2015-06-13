@@ -12,7 +12,7 @@ module PowerSnoop
         end
 
         def website
-          'http://www.belkin.com/us/F7C033/p/P-F7C033/'
+          'http://www.wemothat.com/'
         end
       end
     end
