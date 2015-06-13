@@ -6,3 +6,4 @@ module PowerSnoop
 end
 
 require 'power_snoop/network/upnp'
+require 'power_snoop/network/wemo'

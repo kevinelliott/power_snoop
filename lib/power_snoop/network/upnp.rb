@@ -46,11 +46,11 @@ module PowerSnoop
 
         root_devices = []
         messages.each do |message|
+          # message.each do |piece|
+          #   puts piece
+          # end
+          # puts
           root_device = UPnPRootDevice.new(message)
-          message.each do |piece|
-            puts piece
-          end
-          puts
           root_devices << root_device
         end
 
@@ -71,8 +71,16 @@ module PowerSnoop
     end
 
     class UPnPRootDevice
+      attr_accessor :headers, :protocol
+
       def initialize(message)
-        puts message.pop
+        @protocol = message.shift
+        @headers  = {}
+
+        message.each do |piece|
+          key, value = piece.split(': ')
+          @headers[key] = value
+        end
       end
     end
 
