@@ -3,11 +3,21 @@ module PowerSnoop
     module Wemo
 
       class SmartLEDBulb < PowerSnoop::Device
-        ENERGY_CONSUMPTION_WHEN_OFF = 0.5.watt
-        ENERGY_CONSUMPTION_WHEN_MAX = 10.watt
+        class << self
+          def brand
+            PowerSnoop::Brands::Wemo
+          end
+
+          def energy_consumption_when_off
+            0.5.watt
+          end
+
+          def energy_consumption_when_max
+            10.watt
+          end
+        end
 
         def initialize
-          @brand = PowerSnoop::Brands::Wemo
         end
       end
 

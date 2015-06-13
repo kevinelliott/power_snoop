@@ -5,3 +5,5 @@ module PowerSnoop
     end
   end
 end
+
+require 'power_snoop/devices/wemo/smart_led_bulb'
