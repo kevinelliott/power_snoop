@@ -91,7 +91,6 @@ upnp.ssdp_discover
 
 ## Known Devices
 
-| ------------ | ------ | ------------- | -------------------- | ------ |
 | manufacturer | device | power details | real-time monitoring | status |
 | ------------ | ------ | ------------- | -------------------- | ------ |
 | Belkin | WeMo Link | no | yes | in progress |
