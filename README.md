@@ -32,7 +32,7 @@ Or install it yourself as:
 require 'power_snoop'
 ```
 
-### Get power consumption for a Belkin WeMo Smart LED Bulb when it is turned off
+### Get consumption for a WeMo Smart LED Bulb when it is turned off
 
 ```ruby
 PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_off
@@ -42,7 +42,7 @@ PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_off
 #<Unitwise::Measurement value=0.5 unit=watt>
 ```
 
-### Get maximum power consumption for the Belkin WeMo Smart LED Bulb
+### Get maximum consumption for the WeMo Smart LED Bulb
 
 ```ruby
 PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_max
@@ -52,7 +52,7 @@ PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_max
 #<Unitwise::Measurement value=10 unit=watt>
 ```
 
-### Get power consumption for the Belkin WeMo Smart LED Bulb when at dim level 200 (78%)
+### Get power for the WeMo Smart LED Bulb when at dim level 200 (78%)
 
 ```ruby
 PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_at_dim(200)
