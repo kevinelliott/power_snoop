@@ -91,12 +91,27 @@ upnp.ssdp_discover
 
 ## Known Devices
 
+### Home Automation
+
 | manufacturer | device | power details | real-time monitoring | status |
 | ------------ | ------ | ------------- | -------------------- | ------ |
 | Belkin | WeMo Link | no | yes | in progress |
 | Belkin | WeMo Smart LED Bulb | yes | yes | in progress |
 | Belkin | WeMo Switch | some | yes | planned |
 | Philips | Vue | yes | yes | planned |
+
+### Televisions
+
+| manufacturer | device | power details | real-time monitoring | status |
+| ------------ | ------ | ------------- | -------------------- | ------ |
+| Samsung | 55" SmartTV | yes | yes | planned |
+| Sony | 50" Grand WEGA | yes | no | planned |
+
+### Routers & Modems
+
+| manufacturer | device | power details | real-time monitoring | status |
+| ------------ | ------ | ------------- | -------------------- | ------ |
+| Arris | Touchstone TG862G/CT Cable Modem | yes | yes | planned |
 
 ## Development
 
