@@ -4,6 +4,7 @@ require 'unitwise/ext'
 require 'power_snoop/base'
 require 'power_snoop/brands'
 require 'power_snoop/devices'
+require 'power_snoop/network'
 require 'power_snoop/version'
 
 
