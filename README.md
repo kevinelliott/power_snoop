@@ -31,6 +31,37 @@ Or install it yourself as:
 ```ruby
 require 'power_snoop'
 ```
+
+### Get power consumption for a Belkin WeMo Smart LED Bulb when it is turned off
+
+```ruby
+PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_off
+```
+
+```ruby
+#<Unitwise::Measurement value=0.5 unit=watt>
+```
+
+### Get maximum power consumption for the Belkin WeMo Smart LED Bulb
+
+```ruby
+PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_max
+```
+
+```ruby
+#<Unitwise::Measurement value=10 unit=watt>
+```
+
+### Get power consumption for the Belkin WeMo Smart LED Bulb when at dim level 200 (78%)
+
+```ruby
+PowerSnoop::Devices::Wemo::SmartLEDBulb.consumption_when_at_dim(200)
+```
+
+```ruby
+#<Unitwise::Measurement value=7.91 unit=watt>
+```
+
 ### Scan for WeMo devices on the network
 
 ```ruby
@@ -39,7 +70,6 @@ link = wemo.scan_for_devices
 link
 ```
 
-Output
 ```
 Binding to 10.0.0.61:54321
 Discovering devices
