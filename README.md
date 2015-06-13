@@ -2,7 +2,7 @@
 
 <img src="http://www.oldschool993.com/wp-content/uploads/2015/04/Snoop-Dogg-1.jpg">
 
-Scan, monitor, and calculate power consumption for common devices on and off a network. Support for generic devices will also be included.
+Scan, monitor, and calculate power consumption for common devices on and off a network. Support for generic devices will also be included. Special emphasis on consumer home automation equipment (since it often reduces power consumption over time and tracking this will be useful). 
 
 Features:
 * define and calculate power consumption for a variety of common and specialty electronic devices
