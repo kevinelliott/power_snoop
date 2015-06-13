@@ -1,8 +1,14 @@
 # PowerSnoop
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/power_snoop`. To experiment with that code, run `bin/console` for an interactive prompt.
+<img src="http://www.oldschool993.com/wp-content/uploads/2015/04/Snoop-Dogg-1.jpg">
 
-TODO: Delete this and the text above, and describe your gem
+Scan, monitor, and calculate power consumption for common devices on and off a network. Support for generic devices will also be included.
+
+Features:
+* define and calculate power consumption for a variety of common and specialty electronic devices
+* scan network for known device types
+* monitor and report power consumption over time
+* export reports to data formats and PDFs
 
 ## Installation
 
