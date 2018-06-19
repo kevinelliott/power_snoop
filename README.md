@@ -1,3 +1,5 @@
+To support my open-source work, consider [adding me on Patreon](https://www.patreon.com/kevinelliott).
+
 # PowerSnoop
 
 <img src="http://www.oldschool993.com/wp-content/uploads/2015/04/Snoop-Dogg-1.jpg">
